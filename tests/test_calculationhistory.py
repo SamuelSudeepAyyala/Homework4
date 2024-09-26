@@ -7,7 +7,7 @@ from calculator.calculationhistory import Calculationhistory
 from calculator.operations import add, subtract, multiply, divide
 
 @pytest.fixture
-def make_make_calculations():
+def make_calculations():
     """cleaning the history and adding sample make_calculations"""
     Calculationhistory.delete_history()
 
