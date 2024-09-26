@@ -8,26 +8,26 @@ from calculator.Calculation import Calculation
 from calculator.operations import add,subtract,multiply,divide
 
 
-@pytest.mark.parametrize("a, b, operation, expected",
+@pytest.mark.parametrize("num1, num2, operation, expected",
 [
     (Decimal('2'), Decimal('3'), add, Decimal('5')),
     (Decimal('5'), Decimal('3'), subtract, Decimal('2')),
     (Decimal('15'), Decimal('3'), divide, Decimal('5')),
     (Decimal('4'), Decimal('3'), multiply, Decimal('12')),
     (Decimal('3'), Decimal('3'), add, Decimal('6'))
-]
-)
+])
 
-def test_calculate(a: Decimal, b: Decimal, operation, expected):
+def test_calculate(num1, num2, operation, expected):
     ''' Text '''
-    obj = Calculation(a, b, operation)
+    obj = Calculation(num1, num2, operation)
     assert obj.calculate() == expected, f"Operation {operation.__name__} has been failed!!"
 
 def test_repr():
-    ''' Text '''
+    """ Text """
     obj = Calculation(Decimal('10'), Decimal('5'), add)
     expected_repr = "Calculation(10, 5, add)"
     assert obj.__stringify__() == expected_repr
+
 
 def test_dividebyzero():
     ''' Text '''
