@@ -1,18 +1,20 @@
-'''My Calculator Test'''
-from calculator import add, subtract, multiply, divide
+''' My Calculator Test with Calculator emcapsulation'''
+from calculator import Calculator
+import pytest
 
-def test_addition():
-    '''Test that addition function works '''    
-    assert add(2,2) == 4
+def test_add():
+    result = Calculator.add(2,3)
+    assert  result == 5
 
-def test_subtraction():
-    '''Test that addition function works '''    
-    assert subtract(2,2) == 0
+def test_subtract():
+    assert Calculator.subtract(5,3) == 2
 
-def test_multiplication():
-    '''Test that multiplication function works '''    
-    assert multiply(2,2) == 4
+def test_multiply():
+    assert Calculator.multiply(4,5) == 20
 
-def test_division():
-    '''Test that multiplication function works '''    
-    assert divide(2,2) == 1
+def test_divide():
+    assert Calculator.divide(10,2) == 5
+
+def test_divideByZero():
+    with pytest.raises(ValueError):
+        Calculator.divide(10,0)

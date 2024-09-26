@@ -1,4 +1,4 @@
-def add(a,b):
+def add(a, b):
     return a + b
 
 def subtract(a,b):
@@ -9,6 +9,6 @@ def multiply(a, b):
 
 def divide(a,b):
     if b == 0 :
-        raise ValueError("Divide By Zero is not possible")
+        raise ValueError("Division By Zero is not allowed")
     else:
         return a / b
