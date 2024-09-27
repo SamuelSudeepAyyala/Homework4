@@ -1,5 +1,8 @@
 from decimal import Decimal
 
+"""
+This file contains the python code which defines all the methods like add, subtract, multiply, divide that needs to be performed on the two decimals.
+"""
 # Defines a function to add two numbers
 def add(a: Decimal, b: Decimal) -> Decimal:
     '''
