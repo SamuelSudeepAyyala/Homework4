@@ -8,17 +8,16 @@ import pytest
 from calculator.Calculation import Calculation
 from calculator.operations import add,subtract,multiply,divide
 
-'''
-The pytest.mark.parametrize is a decorator used to run the same test function multiple times with different sets of input parameters and expected outputs. This will help to ensure that 
-Calculation class can handle various operations without duplicating the code.
+# The pytest.mark.parametrize is a decorator used to run the same test function multiple times with different sets of input parameters and expected outputs. This will help to ensure that
+# Calculation class can handle various operations without duplicating the code.
 
-Parameters
-----------
-num1 -> The first operand in the operation which is a Decimal.
-num2 -> The second operand in the operation which is a Decimal.
-operation -> The operation that needs to be performed like add, subtract, multiply and divide
-expected -> The expected output after the operation is performed which will be represented as a Decimal.
-'''
+# Parameters
+# ----------
+# num1 -> The first operand in the operation which is a Decimal.
+# num2 -> The second operand in the operation which is a Decimal.
+# operation -> The operation that needs to be performed like add, subtract, multiply and divide
+# expected -> The expected output after the operation is performed which will be represented as a Decimal.
+
 
 @pytest.mark.parametrize("num1, num2, operation, expected",
 [
@@ -50,7 +49,7 @@ def test_calculate(num1, num2, operation, expected):
         It raises an assertion error if the return is not equal to expected.
     '''
     obj = Calculation(num1, num2, operation)
-    assert obj.calculate() == expected, f"Operation {operation.__name__} has been failed!!"w
+    assert obj.calculate() == expected, f"Operation {operation.__name__} has been failed!!"
 
 def test_repr():
     """ 

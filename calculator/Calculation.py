@@ -37,7 +37,7 @@ class Calculation:
 
     @staticmethod
     def createCalculation(a: Decimal, b: Decimal, operation: Callable[[Decimal,Decimal],Decimal]):
-            '''
+        '''
             This is a static method to create a calculation instance. This method will provide a way to create instance for Calculation class by doing encapsulation to ensure user will 
             interact with the class through defined interfaces.
 
@@ -49,7 +49,7 @@ class Calculation:
             Returns
             -------
             Calculation instance with the specified operands and operation.
-            '''
+        '''
         return Calculation(a, b, operation)
     
     def __stringify__(self):

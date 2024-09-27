@@ -51,7 +51,7 @@ def test_getlatest(make_calculations):
     """
     # Retrieve the latest calculation
     latest = calculations.get_latest_history()
-    # Assert the latest calculation is the last one added 
+    # Assert the latest calculation is the last one added
     assert latest.a == Decimal('15') and latest.b == Decimal('3')
 
 def test_getlatestafterclear():
