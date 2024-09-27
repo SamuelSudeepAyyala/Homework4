@@ -2,7 +2,7 @@ from calculator.Calculation import Calculation
 from decimal import Decimal
 from typing import Callable,List
 
-class Calculationhistory:
+class calculations:
     history = []
 
     @classmethod
