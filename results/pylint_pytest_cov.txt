@@ -1,0 +1,54 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.0.0, pluggy-1.4.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /home/samuel/Fall2024_IS601/Homework3
+configfile: pytest.ini
+testpaths: tests
+plugins: cov-4.1.0, pylint-0.21.0
+collecting ... collected 27 items
+
+tests/__init__.py::PYLINT SKIPPED (file(s) previously passed pylint ...) [  3%]
+tests/test_calculation.py::PYLINT SKIPPED (file(s) previously passed...) [  7%]
+tests/test_calculation.py::test_calculate[num10-num20-add-expected0] PASSED [ 11%]
+tests/test_calculation.py::test_calculate[num11-num21-subtract-expected1] PASSED [ 14%]
+tests/test_calculation.py::test_calculate[num12-num22-divide-expected2] PASSED [ 18%]
+tests/test_calculation.py::test_calculate[num13-num23-multiply-expected3] PASSED [ 22%]
+tests/test_calculation.py::test_calculate[num14-num24-add-expected4] PASSED [ 25%]
+tests/test_calculation.py::test_repr PASSED                              [ 29%]
+tests/test_calculation.py::test_dividebyzero PASSED                      [ 33%]
+tests/test_calculationhistory.py::PYLINT SKIPPED (file(s) previously...) [ 37%]
+tests/test_calculationhistory.py::test_addcalculation PASSED             [ 40%]
+tests/test_calculationhistory.py::test_gethistory PASSED                 [ 44%]
+tests/test_calculationhistory.py::test_clearhistory PASSED               [ 48%]
+tests/test_calculationhistory.py::test_getlatest PASSED                  [ 51%]
+tests/test_calculationhistory.py::test_getlatestafterclear PASSED        [ 55%]
+tests/test_calculationhistory.py::test_findbyoperation PASSED            [ 59%]
+tests/test_calculator.py::PYLINT SKIPPED (file(s) previously passed ...) [ 62%]
+tests/test_calculator.py::test_add PASSED                                [ 66%]
+tests/test_calculator.py::test_subtract PASSED                           [ 70%]
+tests/test_calculator.py::test_multiply PASSED                           [ 74%]
+tests/test_calculator.py::test_divide PASSED                             [ 77%]
+tests/test_calculator.py::test_dividebyzero PASSED                       [ 81%]
+tests/test_operations.py::PYLINT SKIPPED (file(s) previously passed ...) [ 85%]
+tests/test_operations.py::test_addition PASSED                           [ 88%]
+tests/test_operations.py::test_subtraction PASSED                        [ 92%]
+tests/test_operations.py::test_multiplication PASSED                     [ 96%]
+tests/test_operations.py::test_division PASSED                           [100%]
+
+---------- coverage: platform linux, python 3.10.12-final-0 ----------
+Name                               Stmts   Miss  Cover
+------------------------------------------------------
+calculator/Calculation.py             15      0   100%
+calculator/__init__.py                23      0   100%
+calculator/calculationhistory.py      22      0   100%
+calculator/operations.py              11      0   100%
+tests/__init__.py                      0      0   100%
+tests/test_calculation.py             16      0   100%
+tests/test_calculationhistory.py      33      0   100%
+tests/test_calculator.py              14      0   100%
+tests/test_operations.py               9      0   100%
+------------------------------------------------------
+TOTAL                                143      0   100%
+
+
+======================== 22 passed, 5 skipped in 0.08s =========================
