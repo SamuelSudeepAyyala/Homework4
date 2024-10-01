@@ -13,28 +13,18 @@ from calculator.operations import add,subtract,multiply,divide
 
 # Parameters
 # ----------
-# num1 -> The first operand in the operation which is a Decimal.
-# num2 -> The second operand in the operation which is a Decimal.
+# a -> The first operand in the operation which is a Decimal.
+# b -> The second operand in the operation which is a Decimal.
 # operation -> The operation that needs to be performed like add, subtract, multiply and divide
 # expected -> The expected output after the operation is performed which will be represented as a Decimal.
 
-
-@pytest.mark.parametrize("num1, num2, operation, expected",
-[
-    (Decimal('2'), Decimal('3'), add, Decimal('5')), # Addition : 2 + 3 = 5
-    (Decimal('5'), Decimal('3'), subtract, Decimal('2')), # Subtraction : 5 - 3 = 2
-    (Decimal('15'), Decimal('3'), divide, Decimal('5')), # Division : 15 / 3 = 5
-    (Decimal('4'), Decimal('3'), multiply, Decimal('12')), # Multiply : 4 * 3 = 12
-    (Decimal('3'), Decimal('3'), add, Decimal('6')) # Addition : 3 + 3 = 6
-])
-
-def test_calculate(num1, num2, operation, expected):
+def test_calculate(a, b, operation, expected):
     '''Test the 'calculate' method from the 'calculation' class with various arithmetic operations. This test will check if  correct result is being returned for different operations
     using the parameters passed.
     Parameters passed for test cases
     --------------------------------
     
-    num1 and num2 [ Decimal ] -> are the operands that are decimals on which the operations are needed to be performed.
+    a and b [ Decimal ] -> are the operands that are decimals on which the operations are needed to be performed.
     operation [ Callable[[Decimal, Decimal], Decimal] ] ->  The arithmetic operation that needs to be performed.
     expected [ Decimal ] -> The expected result of the operation performed.
     2, 3, add, 5
@@ -48,7 +38,7 @@ def test_calculate(num1, num2, operation, expected):
     - AssertionError
         It raises an assertion error if the return is not equal to expected.
     '''
-    obj = Calculation(num1, num2, operation)
+    obj = Calculation(a, b, operation)
     assert obj.calculate() == expected, f"Operation {operation.__name__} has been failed!!"
 
 def test_repr():
@@ -79,13 +69,13 @@ def test_dividebyzero():
     
     Test Case:
         - Inputs: 5 (a), 0 (b), divide (operation)
-        - Expected behavior: A `ValueError` is raised with the message "Division By Zero is not allowed!"
+        - Expected behavior: A `ValueError` is raised with the message "Cannot divide by zero"
 
     Raises
     ------
     ValueError
-        If division by zero is attempted, with the error message "Division By Zero is not allowed!".
+        If division by zero is attempted, with the error message "Cannot divide by zero".
     """
     obj = Calculation(Decimal('5'), Decimal('0'), divide)
-    with pytest.raises(ValueError, match="Division By Zero is not allowed!"):
+    with pytest.raises(ValueError, match="Cannot divide by zero"):
         obj.calculate()

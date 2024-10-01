@@ -51,6 +51,6 @@ def divide(a: Decimal, b: Decimal) -> Decimal:
     else it will return the result of dividing a by b
     '''
     if b == 0 :
-        raise ValueError("Division By Zero is not allowed!")
+        raise ValueError("Cannot divide by zero")
     else:
         return a / b
