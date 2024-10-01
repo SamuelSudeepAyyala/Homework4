@@ -6,7 +6,7 @@ these tests will ensure that the methods in the 'calculation' class will behave 
 from decimal import Decimal
 import pytest
 from calculator.Calculation import Calculation
-from calculator.operations import add,subtract,multiply,divide
+from calculator.operations import add,divide
 
 # The pytest.mark.parametrize is a decorator used to run the same test function multiple times with different sets of input parameters and expected outputs. This will help to ensure that
 # Calculation class can handle various operations without duplicating the code.
